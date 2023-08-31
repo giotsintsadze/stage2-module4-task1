@@ -69,36 +69,55 @@ public class Employee {
     }
 
     public static class EmployeeBuilder {
-        private Employee employee = new Employee();
+        private String name;
+        private String lastName;
+        private String position;
+        private String phone;
+        private String email;
+        private String carNumber;
 
-        public EmployeeBuilder setName(String name) {
+        public EmployeeBuilder() {
+        }
+
+        public EmployeeBuilder withName(String name) {
+            this.name = name;
+            return this;
+        }
+
+        public EmployeeBuilder withLastName(String lastName) {
+            this.lastName = lastName;
+            return this;
+        }
+
+        public EmployeeBuilder withPosition(String position) {
+            this.position = position;
+            return this;
+        }
+
+        public EmployeeBuilder withPhone(String phone) {
+            this.phone = phone;
+            return this;
+        }
+
+        public EmployeeBuilder withEmail(String email) {
+            this.email = email;
+            return this;
+        }
+
+        public EmployeeBuilder withCarNumber(String carNumber) {
+            this.carNumber = carNumber;
+            return this;
+        }
+
+        public Employee build() {
+            Employee employee = new Employee();
             employee.setName(name);
-            return this;
-        }
-
-        public EmployeeBuilder setLastName(String lastName) {
             employee.setLastName(lastName);
-            return this;
-        }
-
-        public EmployeeBuilder setPosition(String position) {
             employee.setPosition(position);
-            return this;
-        }
-
-        public EmployeeBuilder setPhone(String phone) {
             employee.setPhone(phone);
-            return this;
-        }
-
-        public EmployeeBuilder setEmail(String email) {
             employee.setEmail(email);
-            return this;
-        }
-
-        public EmployeeBuilder setCarNumber(String carNumber) {
             employee.setCarNumber(carNumber);
-            return this;
+            return employee;
         }
     }
 }
